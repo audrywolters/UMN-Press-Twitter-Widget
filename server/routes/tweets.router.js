@@ -89,7 +89,7 @@ router.put('/database/reject', rejectUnauthenticated, (req, res) => {
 
 
 // Updates approved value of tweets in tweet table to false
-router.put('/database/delete', rejectUnauthenticated, (req, res) => {
+router.delete('/database/delete', rejectUnauthenticated, (req, res) => {
   const queryText = `
   DELETE FROM tweet 
   WHERE approved IS null;

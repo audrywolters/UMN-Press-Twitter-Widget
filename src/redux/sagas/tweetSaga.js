@@ -173,6 +173,7 @@ function* rejectTweet(action){
 function* deleteUnapproved(action){
   try {
     const response = yield axios.delete('/tweets/database/delete')
+    yield put({ type:'FETCH_DATABASE_TWEETS'});
   } catch (error) {
     console.log('error with deleting tweets', error);
   }
@@ -185,7 +186,7 @@ function* tweetSaga() {
   yield takeLatest('SAVE_TWEETS', saveTweets);
   yield takeLatest('APPROVE_TWEET', approveTweet);
   yield takeLatest('REJECT_TWEET', rejectTweet);
-  yield takeLateest('DELETE_UNAPPROVED_TWEETS', deleteUnapproved);
+  yield takeLatest('DELETE_UNAPPROVED_TWEETS', deleteUnapproved);
 }
 
 export default tweetSaga;
