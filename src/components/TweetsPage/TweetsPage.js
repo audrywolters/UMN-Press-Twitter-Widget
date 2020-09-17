@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
+import Box from '@material-ui/core/Box';
 
 
 const styles = theme => ({
@@ -68,6 +69,12 @@ class TweetsPage extends Component {
     }
   }
 
+
+  // deletes all unapproved tweets
+  deleteUnapproved = () => {
+    this.props.dispatch({type:'DELETE_UNAPPROVED_TWEETS'})
+    this.props.history.push("/publications");
+  }
 
 
   // send the approve/reject based on which button was pressed
@@ -234,6 +241,11 @@ class TweetsPage extends Component {
           : ''}
 
         </GridList>
+        {this.state.tweetsArray.length > 0 ?
+        <Box display='flex' justifyContent='center' style={{marginTop:'60px'}}>
+        <Button variant="contained" color="secondary" onClick={this.deleteUnapproved}>Delete ALL Unapproved Tweets</Button>
+        </Box>
+        : ''}
       </>
     )
   } 
