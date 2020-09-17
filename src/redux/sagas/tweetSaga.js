@@ -139,6 +139,7 @@ function* saveTweets(action){
             tweetId: tweetId,
             publicationId: publicationId,
           });
+          yield put({type:'ADD_NEW_TWEET_COUNT'});
         }
         yield put({ type:'FETCH_DATABASE_TWEETS'});
       }

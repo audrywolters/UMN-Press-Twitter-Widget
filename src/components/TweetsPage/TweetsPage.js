@@ -111,7 +111,8 @@ class TweetsPage extends Component {
     if (this.props.dbTweets.map === undefined) return null;
     if (this.state.tweetsArray[0] === undefined) return null;
     if (this.props.publication === undefined) return null;
-    if (this.state.tweetsArray[this.state.key1].publication_id === undefined) return null;
+    if (this.state.tweetsArray === undefined) return null;
+    // if (this.state.tweetsArray[this.state.key1].publication_id === undefined) return null;
 
     return(
       <>
