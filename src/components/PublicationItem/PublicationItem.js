@@ -15,6 +15,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import Box from '@material-ui/core/Box';
+import {Link} from 'react-router-dom'
 
 const styles = theme => ({
   root: {
@@ -379,9 +380,11 @@ class PublicationItem extends Component {
                   </FormControl>
               </Box>
               <Box display='flex'>
-                <Button variant="contained" color="primary" href={'http://localhost:3000/#/books/'+this.props.match.params.id} target="_blank">
+              <Link to= {'/books/'+this.props.match.params.id} target="_blank">
+                <Button variant="contained" color="primary" >
                   View Book Page &nbsp;<PlayArrowIcon/>
-                </Button>
+              </Button>
+              </Link>
               </Box>
             </Box>
         </Paper>
