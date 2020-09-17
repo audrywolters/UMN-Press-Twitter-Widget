@@ -69,6 +69,11 @@ class TweetsPage extends Component {
   }
 
 
+  // deletes all unapproved tweets
+  deleteUnapproved = () => {
+    this.props.dispatch({type:'DELETE_UNAPPROVED_TWEETS'})
+  }
+
 
   // send the approve/reject based on which button was pressed
   handleApprove = (tweetId, slot, approved) => {
@@ -234,6 +239,9 @@ class TweetsPage extends Component {
           : ''}
 
         </GridList>
+        {this.state.tweetsArray.length > 0 ?
+        <Button variant="contained" color="secondary" onClick={this.deleteUnapproved}>Delete ALL Unapproved Tweets</Button>
+        : ''}
       </>
     )
   } 

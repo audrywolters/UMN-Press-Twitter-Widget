@@ -87,4 +87,21 @@ router.put('/database/reject', rejectUnauthenticated, (req, res) => {
   })
 })
 
+
+// Updates approved value of tweets in tweet table to false
+router.put('/database/delete', rejectUnauthenticated, (req, res) => {
+  const queryText = `
+  DELETE FROM tweet 
+  WHERE approved IS null;
+  `
+  pool.query(queryText)
+  .then( (response) => {
+      res.send(response.rows);
+  })
+  .catch( (err) => {
+      console.log('An error occured while deleting tweets:', err);
+      res.sendStatus(500);
+  })
+})
+
 module.exports = router;
