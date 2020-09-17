@@ -48,7 +48,6 @@ This is useful when using a deployment service with database row limits.
 - Approved Tweets should automatically appear on their corresponding book page where the Twitter Widget (separate documentation) is set up.
 
 
-
 ## Development Setup
 ### Prerequisites
 
@@ -151,27 +150,17 @@ Searches can be automatically scheduled by configuring the schedule.js module in
     - schedule.js
     
 
-## APIs Used
-
-- The excellent [ProPublica Congress API](https://projects.propublica.org/api-docs/congress-api/) provides the data used for congress members, voting history, bills, committees, and statements.
-- The [Wikipedia API](https://www.mediawiki.org/wiki/API:Main_page) provides the biographical data about members and congress as well as descriptions of congressional committees.
-- The API at [whoismyrepresentative.com](https://whoismyrepresentative.com/api) translates zip codes into congressional districts.
-- [theunitedstates.io](https://github.com/unitedstates/images) provides public domain images of congress members.
-
-
 ## Built With
 
-JavaScript, React, Node.js, Express, PostgreSQL, Redux, Redux-Saga, Material-UI
+JavaScript, React, Node.js, Express, PostgreSQL, Redux, Redux-Saga, Material-UI, Node-Cron, Papa Parse CSV Parser
 
 
 ## Acknowledgements
 
-I'd like to thank [ProPublica.org](https://www.propublica.org/) for their amazing congressional API, this project would have been impossible without it.
+This App was developed by Ross Hutchens, Paul Joachim, Josh Maus, and Jason Stiff as part of the curriculum at Prime Digital Academy in Minneapolis, MN. 
 
-Also I'm very grateful to Wikipedia and the Wikimedia foundation for their biographical information about congress members, and everything they do to make information accessible to people around the world.
+We'd like to thank the University of Minnesota Press, and especially Maggie Sattler for the opportunity to work on such a unique problem. It was a great pleasure to help further their educational and engagement goals.
 
-Finally, thanks go to my instructors and peers at [Prime Digital Academy](https://www.primeacademy.io) who equipped me and helped to make this application a reality.
+We'd also like to thank Twitter for making tweet data easily accessible to developers via their Developer Portal and their APIs. 
 
-
-
-Source code for the U of M Twitter Widget application provided by Prime Digital Academy alumni.
+Finally, thanks go to our instructors and peers at [Prime Digital Academy](https://www.primeacademy.io) especially Mary Mosman and Dev Jana who equipped us with the skills and knowledge to make this application a reality.
