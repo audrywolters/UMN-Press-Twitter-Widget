@@ -92,8 +92,7 @@ router.put('/database/reject', rejectUnauthenticated, (req, res) => {
 router.delete('/database/delete', rejectUnauthenticated, (req, res) => {
   const queryText = `
   DELETE FROM tweet 
-  WHERE approved IS null;
-  `
+  WHERE approved IS null OR approved = false;`
   pool.query(queryText)
   .then( (response) => {
       res.send(response.rows);

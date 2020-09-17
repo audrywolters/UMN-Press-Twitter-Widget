@@ -44,7 +44,7 @@ class TweetsPage extends Component {
   // The keys reference an index position in tweetsArray and the index they reference advances
   // as tweets are approved & rejected.
   state = {
-    tweetsArray: [1,2,3],
+    tweetsArray: [],
     key1: 0,
     key2: 1,
     key3: 2,
@@ -242,11 +242,9 @@ class TweetsPage extends Component {
           : ''}
 
         </GridList>
-        {this.state.tweetsArray.length > 0 ?
         <Box display='flex' justifyContent='center' style={{marginTop:'60px'}}>
-        <Button variant="contained" color="secondary" onClick={this.deleteUnapproved}>Delete ALL Unapproved Tweets</Button>
+          <Button variant="contained" color="secondary" onClick={this.deleteUnapproved}>Delete ALL Unapproved Tweets</Button>
         </Box>
-        : ''}
       </>
     )
   } 
